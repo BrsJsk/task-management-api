@@ -1,0 +1,159 @@
+{
+    "info": {
+        "_postman_id": "f94437ef-3f89-480b-ad45-a407cbc83613",
+        "name": "Task Management",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Task",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"title\": \"This is a task\",\r\n    \"description\": \"Task222\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:3333/api/task",
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "3333",
+                    "path": [
+                        "api",
+                        "task"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Task",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://127.0.0.1:3333/api/task/5",
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "3333",
+                    "path": [
+                        "api",
+                        "task",
+                        "5"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Find By Id",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://127.0.0.1:3333/api/task/4",
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "3333",
+                    "path": [
+                        "api",
+                        "task",
+                        "4"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Update Status",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"status\": \"closed\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:3333/api/task/4/status",
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "3333",
+                    "path": [
+                        "api",
+                        "task",
+                        "4",
+                        "status"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Find All",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://127.0.0.1:3333/api/task",
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "3333",
+                    "path": [
+                        "api",
+                        "task"
+                    ],
+                    "query": [
+                        {
+                            "key": "status",
+                            "value": "open",
+                            "disabled": true
+                        },
+                        {
+                            "key": "search",
+                            "value": "desc",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "protocolProfileBehavior": {}
+}
