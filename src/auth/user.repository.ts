@@ -11,6 +11,10 @@ export class UserRepository extends Repository<User> {
     user.username = username;
     user.password = password;
 
-    await user.save();
+    try {
+      await user.save();
+    } catch (err) {
+      return err;
+    }
   }
 }
