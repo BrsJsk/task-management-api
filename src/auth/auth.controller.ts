@@ -1,4 +1,4 @@
-import { Body, Controller, Query } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 
 @Controller('auth')
 export class AuthController {
