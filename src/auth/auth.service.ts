@@ -8,9 +8,15 @@ export class AuthService {
   constructor(
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
-  ) {}
+  ) {
+  }
 
   signUp(authCredentials: AuthCredentialsDto): Promise<void> {
     return this.userRepository.signUp(authCredentials);
+  }
+
+  signIn(authCredentials: AuthCredentialsDto): Promise<any> {
+    const valid = this.userRepository.validatePassword(authCredentials);
+    return valid;
   }
 }
