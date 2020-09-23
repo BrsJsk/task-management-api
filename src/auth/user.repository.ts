@@ -2,7 +2,6 @@ import { EntityRepository, Repository } from 'typeorm';
 import { User } from './user.entity';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import * as bcrypt from 'bcrypt';
-import { UnauthorizedException } from '@nestjs/common';
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
@@ -31,15 +30,11 @@ export class UserRepository extends Repository<User> {
     return bcrypt.hash(password, salt);
   }
 
-  async validatePassword(authCredentials: AuthCredentialsDto): Promise<string> {
+  async validatePassword(authCredentials: AuthCredentialsDto): Promise<boolean> {
     const { password, username } = authCredentials;
 
     const user = await this.findOne({ username });
 
-    if (user && (await user.validatePassword(password))) {
-      return 'valid';
-    }
-
-    throw new UnauthorizedException();
+    return !!(user && (await user.validatePassword(password)));
   }
 }
