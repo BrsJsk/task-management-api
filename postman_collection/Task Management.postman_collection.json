@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5fae202b-5d1f-402f-a63c-026724de6640",
+		"_postman_id": "a7869d39-824b-4c84-85b5-07e330b2de1d",
 		"name": "Task Management",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -161,7 +161,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"boris\",\n    \"password\": \"fakepassword\"\n}",
+					"raw": "{\n    \"username\": \"boris\",\n    \"password\": \"Fakepassword123456\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -186,7 +186,69 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Sign in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"boris\",\r\n    \"password\": \"Fakepassword123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3333/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3333",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NjQwODYwLCJleHAiOjE2MDg2NDQ0NjB9.XDmbUPtoXt8Q7eAUP_PTKjaHntRbZXaedzVXtLCLIKE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3333/api/auth/test",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3333",
+					"path": [
+						"api",
+						"auth",
+						"test"
+					]
+				}
+			},
+			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
