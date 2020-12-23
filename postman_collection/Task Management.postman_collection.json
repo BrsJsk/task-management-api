@@ -8,8 +8,24 @@
 		{
 			"name": "Create Task",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NzIxNjA2LCJleHAiOjE2MDg3MjUyMDZ9.CitHBNC39fEH1sTA4pCtEq2o-JUGWzEie9DIJQYjhn0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NjQxOTgxLCJleHAiOjE2MDg2NDU1ODF9.gIhe6FLn6i90SAyUFejs7zAGqcb2fnCInH9rvE308xg",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"title\": \"This is a task\",\r\n    \"description\": \"Task222\"\r\n}",
@@ -40,32 +56,24 @@
 		{
 			"name": "Delete Task",
 			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:3333/api/task/5",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3333",
-					"path": [
-						"api",
-						"task",
-						"5"
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NzIxNjA2LCJleHAiOjE2MDg3MjUyMDZ9.CitHBNC39fEH1sTA4pCtEq2o-JUGWzEie9DIJQYjhn0",
+							"type": "string"
+						}
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Find By Id",
-			"request": {
-				"method": "GET",
-				"header": [],
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NjQxOTgxLCJleHAiOjE2MDg2NDU1ODF9.gIhe6FLn6i90SAyUFejs7zAGqcb2fnCInH9rvE308xg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://127.0.0.1:3333/api/task/4",
 					"protocol": "http",
@@ -86,10 +94,56 @@
 			"response": []
 		},
 		{
+			"name": "Find By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NzI5OTM0LCJleHAiOjE2MDg3MzM1MzR9.t71q24W67QkcjoqzqI4Cl4tXKbW-C0WOEK-5EkjxHqg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NjQxOTgxLCJleHAiOjE2MDg2NDU1ODF9.gIhe6FLn6i90SAyUFejs7zAGqcb2fnCInH9rvE308xg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3333/api/task/4555",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3333",
+					"path": [
+						"api",
+						"task",
+						"4555"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Update Status",
 			"request": {
 				"method": "PATCH",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NjQxOTgxLCJleHAiOjE2MDg2NDU1ODF9.gIhe6FLn6i90SAyUFejs7zAGqcb2fnCInH9rvE308xg",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"status\": \"closed\"\r\n}",
@@ -122,8 +176,24 @@
 		{
 			"name": "Find All",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NzIxNjA2LCJleHAiOjE2MDg3MjUyMDZ9.CitHBNC39fEH1sTA4pCtEq2o-JUGWzEie9DIJQYjhn0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzIiwiaWF0IjoxNjA4NjQxOTgxLCJleHAiOjE2MDg2NDU1ODF9.gIhe6FLn6i90SAyUFejs7zAGqcb2fnCInH9rvE308xg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://127.0.0.1:3333/api/task",
 					"protocol": "http",
