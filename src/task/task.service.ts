@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { TaskRepository } from './task.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Task } from './task.entity';
@@ -10,6 +10,8 @@ import { User } from '../auth/user.entity';
 
 @Injectable()
 export class TaskService {
+  private logger = new Logger('TaskService');
+
   constructor(
     @InjectRepository(TaskRepository) private taskRepository: TaskRepository,
   ) {}
@@ -26,6 +28,8 @@ export class TaskService {
     const found = await this.taskRepository.getById(id, user);
 
     if (!found) {
+      this.logger.warn(`Tried to load task ${id} which does not exist`);
+
       throw new NotFoundException();
     }
 
