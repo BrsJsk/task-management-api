@@ -10,8 +10,7 @@ export class AuthService {
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
     private jwtService: JwtService,
-  ) {
-  }
+  ) {}
 
   signUp(authCredentials: AuthCredentialsDto): Promise<void> {
     return this.userRepository.signUp(authCredentials);
