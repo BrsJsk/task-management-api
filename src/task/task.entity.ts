@@ -25,7 +25,7 @@ export class Task extends BaseEntity {
   @ManyToOne(
     () => User,
     user => user.tasks,
-    { eager: false },
+    { eager: false, onUpdate: 'CASCADE', onDelete: 'CASCADE' },
   )
   user: User;
 }

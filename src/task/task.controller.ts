@@ -42,8 +42,11 @@ export class TaskController {
   }
 
   @Get('/:id')
-  findById(@Param('id', ParseIntPipe) id: number): Promise<Task> {
-    return this.taskService.findById(id);
+  findById(
+    @Param('id', ParseIntPipe) id: number,
+    @GetUser() user: User,
+  ): Promise<Task> {
+    return this.taskService.findById(id, user);
   }
 
   @Delete('/:id')
@@ -55,7 +58,8 @@ export class TaskController {
   updateStatus(
     @Param('id', ParseIntPipe) id: number,
     @Body('status', TaskStatusValidationPipe) body: TaskStatus,
+    @GetUser() user: User,
   ) {
-    return this.taskService.updateStatus(id, body);
+    return this.taskService.updateStatus(id, body, user);
   }
 }

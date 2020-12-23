@@ -40,4 +40,13 @@ export class TaskRepository extends Repository<Task> {
 
     return query.getMany();
   }
+
+  getById(id: number, user: User): Promise<Task> {
+    const query = this.createQueryBuilder('task');
+
+    query.where('task.userId = :userId', { userId: user.id });
+    query.where('id = :id', { id });
+
+    return query.getOne();
+  }
 }
