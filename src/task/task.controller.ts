@@ -50,8 +50,8 @@ export class TaskController {
   }
 
   @Delete('/:id')
-  delete(@Param('id') id: number) {
-    return this.taskService.delete(id);
+  delete(@Param('id') id: number, @GetUser() user: User) {
+    return this.taskService.delete(id, user);
   }
 
   @Patch('/:id/status')
